@@ -40,9 +40,6 @@ public class Application {
                         System.out.println(arrayMulti[seletor-1][2]);
                         System.out.println(arrayMulti[seletor-1][3] + "\n");
                         break;
-                    case 7:
-                        System.out.println("Going out...");
-                        break;
                     default:
                         System.out.println("Invalid option!\n");
                 }
