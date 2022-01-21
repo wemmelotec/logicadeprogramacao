@@ -3,8 +3,6 @@ package challenges.first;
 import java.util.Scanner;
 
 public class Application {
-
-
     public static void main(String[] args){
         int seletor;
         Scanner opcaoDoUsuario = new Scanner(System.in);
@@ -28,28 +26,31 @@ public class Application {
             System.out.println("7 - Exit");
             System.out.print("\n" +"Choose one of the options: ");
             seletor = opcaoDoUsuario.nextInt();
-            switch (seletor) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                    System.out.println("Available vehicles:");
-                    System.out.println(arrayMulti[seletor-1][0]);
-                    System.out.println(arrayMulti[seletor-1][1]);
-                    System.out.println(arrayMulti[seletor-1][2]);
-                    System.out.println(arrayMulti[seletor-1][3]);
-                    break;
-                case 7:
-                    System.out.println("Going out...");
-                    break;
-                default:
-                    System.out.println("Invalid option!\n");
+            if(seletor != 7) {
+                switch (seletor) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        System.out.println("Available vehicles:");
+                        System.out.println(arrayMulti[seletor-1][0]);
+                        System.out.println(arrayMulti[seletor-1][1]);
+                        System.out.println(arrayMulti[seletor-1][2]);
+                        System.out.println(arrayMulti[seletor-1][3] + "\n");
+                        break;
+                    case 7:
+                        System.out.println("Going out...");
+                        break;
+                    default:
+                        System.out.println("Invalid option!\n");
+                }
+                System.out.println("Do you wish to continue?");
+                System.out.println("0 - No\n" +"1 - Yes");
+                seletor = opcaoDoUsuario.nextInt();
             }
-            System.out.println("Do you wish to continue?");
-            System.out.println("0 - No\n" +"1 - Yes");
-            seletor = opcaoDoUsuario.nextInt();
+
         }while (seletor == 1);
 
     }
