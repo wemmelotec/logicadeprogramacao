@@ -1,19 +1,21 @@
 package challenges.second;
-
+import challenges.second.classes.Vehicle;
+import challenges.second.repository.VehicleRepository;
+import challenges.second.service.VehicleService;
 
 public class Application {
     public static void main(String[] args) {
-        Automaker automaker = new Automaker("GM");
-        Automaker automaker2 = new Automaker("Hyundai");
-        Vehicle vehicle = new Vehicle(automaker, "Suburban","back",2020);
-        Vehicle vehicle2 = new Vehicle(automaker2,"Azera", "blue", 2022);
+//        VehicleRepository vehicleRepository = new VehicleRepository();
+//
+//        for (Vehicle x: vehicleRepository.getBancoDeDadosVehicle()) {
+//            System.out.println(x.getAutomaker());
+//        }
+        VehicleService vehicleService = new VehicleService();
+        vehicleService.searchByAutomaker();
 
-        Vehicle[] listVehicle = new Vehicle[10];
-        listVehicle[0] = vehicle;
-        listVehicle[1] = vehicle2;
+//        for (String x: vehicleService.searchByAutomaker()) {
+//            System.out.println();
+//        }
 
-        for (Vehicle x: listVehicle) {
-            System.out.println(x.prettyPrint());
-        }
     }
 }

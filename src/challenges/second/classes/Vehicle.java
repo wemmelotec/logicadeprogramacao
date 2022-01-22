@@ -1,4 +1,6 @@
-package challenges.second;
+package challenges.second.classes;
+
+import challenges.second.classes.Automaker;
 
 public class Vehicle {
     //all attributes are necessary
