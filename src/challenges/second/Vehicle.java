@@ -1,4 +1,4 @@
-package challenges.second.classes;
+package challenges.second;
 
 public class Vehicle {
     //all attributes are necessary

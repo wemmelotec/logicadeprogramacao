@@ -1,4 +1,4 @@
-package challenges.second.classes;
+package challenges.second;
 
 import java.util.Objects;
 

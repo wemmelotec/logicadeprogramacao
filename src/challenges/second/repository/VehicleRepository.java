@@ -1,9 +1,7 @@
 package challenges.second.repository;
 
-import challenges.second.classes.Vehicle;
+public interface VehicleRepository {
 
-public class VehicleRepository {
-
-     Vehicle[] listVehicle;
+     public void createBdVehicle();
 
 }

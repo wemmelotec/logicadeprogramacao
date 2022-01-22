@@ -1,6 +1,6 @@
 package variaveis;
 
-import sun.swing.StringUIClientPropertyKey;
+//import sun.swing.StringUIClientPropertyKey;
 
 public class Class12 {
     public static void main(String[] args) {
