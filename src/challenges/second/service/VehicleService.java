@@ -8,22 +8,25 @@ import java.util.Arrays;
 public class VehicleService {
 
     VehicleRepository vehicleRepository = new VehicleRepository();
+    //soluçao em https://pt.stackoverflow.com/questions/14339/eliminar-valores-repetidos-array-java
+    public String[] retiraRepetidos(String[] array) {
+        String[] arraySemRepeticao = new String[array.length];
+        int qtd = 0;
+        for( int i = 0 ; i < array.length ; i++ ) {
+            boolean existe = false;
+            for( int j = 0 ; j < qtd ; j++ ) {
+                if( arraySemRepeticao[ j ] == array[ i ] ) {
+                    existe = true;
+                    break;
+                }
+            }
+            if( !existe ) {
+                arraySemRepeticao[ qtd++ ] = array[ i ];
+            }
+        }
+        arraySemRepeticao = Arrays.copyOf( arraySemRepeticao , qtd );
 
-    public static String[] retiraRepetidos(String[] array) {
-        Arrays.sort(array);
-        String[] lista = new String[array.length];
-        int j = 0;
-        for (int i = 0; i < array.length; i++) {
-            if ((i > 0) && (array[i].equals(array[i - 1])) && (array[i].equals(array[i + 1]))) continue;
-            if ((i < array.length - 2) && (array[i].equals(array[i + 2]))) continue;
-            lista[j++] = array[i];
-        }
-        if (j != array.length){
-            String[] newLista = new String[j];
-            System.arraycopy(lista, 0, newLista, 0, j);
-            return newLista;
-        }
-        return lista;
+        return arraySemRepeticao;
     }
 
     public String[] searchByAutomaker(){
@@ -38,7 +41,4 @@ public class VehicleService {
         return vehicleRepository;
     }
 
-//    public void setVehicleRepository(VehicleRepository vehicleRepository) {
-//        this.vehicleRepository = vehicleRepository;
-//    }
 }

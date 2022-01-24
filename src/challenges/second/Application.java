@@ -1,18 +1,11 @@
 package challenges.second;
 
-import challenges.second.classes.Vehicle;
-import challenges.second.repository.VehicleRepository;
 import challenges.second.service.VehicleService;
-
 import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-//        VehicleRepository vehicleRepository = new VehicleRepository();
-//
-//        for (Vehicle x: vehicleRepository.getBancoDeDadosVehicle()) {
-//            System.out.println(x.getAutomaker());
-//        }
+
         int seletor;
         Scanner opcaoDoUsuario = new Scanner(System.in);
         VehicleService vehicleService = new VehicleService();
