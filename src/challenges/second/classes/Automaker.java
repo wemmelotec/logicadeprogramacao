@@ -3,7 +3,7 @@ package challenges.second.classes;
 import java.util.Objects;
 
 public class Automaker {
-    //notnull
+
     private String name;
 
     public Automaker(String name) {

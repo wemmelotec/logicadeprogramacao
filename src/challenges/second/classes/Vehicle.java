@@ -1,9 +1,7 @@
 package challenges.second.classes;
 
-import challenges.second.classes.Automaker;
-
 public class Vehicle {
-    //all attributes are necessary
+
     private Automaker automaker;
     private String model;
     private String color;
@@ -50,11 +48,6 @@ public class Vehicle {
 
 
     public String prettyPrint() {
-        return "Vehicle{" +
-                "automaker=" + automaker +
-                ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", year=" + year +
-                '}';
+        return "{" + model + "\t" + color + "\t" + year +"}";
     }
 }

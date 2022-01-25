@@ -16,31 +16,23 @@ public class Application {
             System.out.println("0 - Exit");
             System.out.print("\n" + "Choose one of the options: ");
             seletor = opcaoDoUsuario.nextInt();
-            //implementar uma limpeza de tela aqui
+
             if (seletor == 1) {
-                switch (seletor) {
-                    case 1:
-                        int numeroColunaDaEsquerda = 1;
+                int numeroColunaDaEsquerda = 1;
                         int seletorDoMenuMontadora;
                         for (String x : vehicleService.searchByAutomaker()) {
                             System.out.printf("%d - " + x + "\n", numeroColunaDaEsquerda );
                             numeroColunaDaEsquerda++;
                         }
-
                         System.out.print("\n" +"Choose one of the options: ");
-                        seletorDoMenuMontadora = opcaoDoUsuario.nextInt();
-
-                        //aqui implemento a busca pela montadora
-                        //if equals ignore case == w sout
-                        vehicleService.getVehicleRepository().getBancoDeDadosVehicle()[seletorDoMenuMontadora-1].getAutomaker().getName();
-
-                        break;
-                    default:
-                        System.out.println("Invalid option!\n");
-                }
+                        vehicleService.printVehicleByAutomaker(seletorDoMenuMontadora = opcaoDoUsuario.nextInt());
                 System.out.println("Do you wish to continue?");
                 System.out.println("0 - No\n" + "1 - Yes");
                 seletor = opcaoDoUsuario.nextInt();
+            }else if (seletor == 0){
+                break;
+            }else{
+                System.out.println("Invalid option!\n");
             }
 
         } while (seletor == 1);
