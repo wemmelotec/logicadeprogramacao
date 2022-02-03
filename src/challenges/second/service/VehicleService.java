@@ -37,6 +37,7 @@ public class VehicleService {
     }
 
     public void printVehicleByAutomaker(int x){
+
         switch (x){
             case 1:
                 for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
@@ -83,6 +84,69 @@ public class VehicleService {
             default:
                 System.out.println("Invalid option!");
         }
+
+    }
+
+    public String[] searchByModel(){
+        String[] models = new String[vehicleRepository.getBancoDeDadosVehicle().length];
+        for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length ; i++) {
+            models[i] = vehicleRepository.getBancoDeDadosVehicle()[i].getModel();
+        }
+        return models;
+    }
+
+    public void printVehicleByModel(String model){
+        for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()==model){
+                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+                    }
+                }
+//        switch (x){
+//            case 1:
+//                for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+//                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()=="Suburban"){
+//                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+//                    }
+//                }
+//                break;
+//            case 2:
+//                for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+//                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()=="Malibu"){
+//                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+//                    }
+//                }
+//                break;
+//            case 3:
+//                for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+//                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()=="Silverado"){
+//                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+//                    }
+//                }
+//                break;
+//            case 4:
+//                for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+//                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()=="Azera"){
+//                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+//                    }
+//                }
+//                break;
+//            case 5:
+//                for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+//                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()=="Sonata"){
+//                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+//                    }
+//                }
+//                break;
+//            case 6:
+//                for (int i = 0; i < vehicleRepository.getBancoDeDadosVehicle().length; i++) {
+//                    if(vehicleRepository.getBancoDeDadosVehicle()[i].getModel()=="Veloster"){
+//                        System.out.println(vehicleRepository.getBancoDeDadosVehicle()[i].prettyPrint());
+//                    }
+//                }
+//                break;
+//            default:
+//                System.out.println("Invalid option!");
+//        }
 
     }
 
